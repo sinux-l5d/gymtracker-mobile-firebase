@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ session?.name }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="session">
+    <ion-list lines="none">
+      <ion-item *ngFor="let exercise of session.exercises">
+        <app-exercise-card
+          [exercise]="exercise"
+          [onEdit]="updateExercise"
+        ></app-exercise-card>
+      </ion-item>
+    </ion-list>
+    <ion-button expand="block" (click)="addNewExercise()">
+      <ion-icon icon="add"></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>

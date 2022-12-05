@@ -1,0 +1,35 @@
+<h4>
+  <ion-input
+    placeholder="Exercise name"
+    [(ngModel)]="name"
+    [ngModelOptions]="{ updateOn: 'blur' }"
+  >
+  </ion-input>
+  <!-- {{ exercise?.name }} -->
+</h4>
+
+<ion-button fill="outline" (click)="decrementReps()">
+  <ion-icon name="remove-outline"></ion-icon>
+</ion-button>
+<ion-button fill="clear" (click)="incrementReps(5)">
+  <ion-icon slot="start" name="repeat-outline"></ion-icon>
+  {{ exercise?.repetitions }}
+</ion-button>
+<ion-button fill="outline" (click)="incrementReps()">
+  <ion-icon name="add-outline"></ion-icon>
+</ion-button>
+
+<ion-item>
+  <ion-input
+    [(ngModel)]="weight"
+    [ngModelOptions]="{ updateOn: 'blur' }"
+    min="0"
+  ></ion-input>
+  <ion-label> kg </ion-label>
+</ion-item>
+
+<ion-input
+  placeholder="Easy, medium, hardish..."
+  [(ngModel)]="note"
+  [ngModelOptions]="{ updateOn: 'blur' }"
+></ion-input>
